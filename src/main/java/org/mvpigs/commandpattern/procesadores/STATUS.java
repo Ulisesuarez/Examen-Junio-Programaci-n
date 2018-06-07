@@ -1,6 +1,6 @@
 package org.mvpigs.commandpattern.procesadores;
 
-public enum STATUS {
+enum STATUS {
     ACEPTADO, RECHAZADO
 
 }

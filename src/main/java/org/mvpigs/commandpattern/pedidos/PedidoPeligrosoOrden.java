@@ -23,6 +23,10 @@ public class PedidoPeligrosoOrden implements PedidoPeligroso {
         return this.peso;
     }
 
+    public void setPeso(int peso){
+        this.peso=peso;
+    }
+
     public String destino() {
         return this.destino;
     }

@@ -14,7 +14,7 @@ public class TratamientoPedidoMultiple implements TratamientoPedido{
     }
 
     public boolean tratar() {
-        if (pesoTotal > 0){
+        if ( pesoTotal > 0){
             return true;
         }
         return false;
@@ -30,12 +30,10 @@ public class TratamientoPedidoMultiple implements TratamientoPedido{
     }
 
     public void calcularPesoTotal() {
-        for (Pedido pedido : pedidos){
-            this.pesoTotal=this.pesoTotal+pedido.peso();
-    }
+        this.pesoTotal=this.pedidos.stream().map(Pedido::peso).reduce(Integer::sum).get();
     }
 
-    public double getPesoTotal() {
+    public int getPesoTotal() {
         return this.pesoTotal;
     }
 }
