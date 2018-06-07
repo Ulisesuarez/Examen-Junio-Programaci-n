@@ -1,4 +1,4 @@
-package org.mvpigs;
+package org.mvpig.commandpattern;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -6,14 +6,14 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.junit.Test;
-import org.mvpigs.commandpattern.interfaces.Pedido;
-import org.mvpigs.commandpattern.interfaces.PedidoPeligroso;
-import org.mvpigs.commandpattern.interfaces.Procesador;
-import org.mvpigs.commandpattern.interfaces.TratamientoPedido;
+import org.mvpigs.commandpattern.pedidos.Pedido;
+import org.mvpigs.commandpattern.pedidos.PedidoPeligroso;
 import org.mvpigs.commandpattern.pedidos.PedidoInternacional;
 import org.mvpigs.commandpattern.pedidos.PedidoNacional;
 import org.mvpigs.commandpattern.pedidos.PedidoPeligrosoOrden;
 import org.mvpigs.commandpattern.procesadores.Oficina;
+import org.mvpigs.commandpattern.procesadores.Procesador;
+import org.mvpigs.commandpattern.tratamientos.TratamientoPedido;
 import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoInternacional;
 import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoMultiple;
 import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoPeligroso;
@@ -192,46 +192,5 @@ public class TestPedidos {
      * respetando los constructores que se exigen.
      */
 
-    @Test
-    public void test_tratamiento_pedido_multiple_tratar() {
 
-        /**
-         * Crea una colección de tres pedidos nacionales, 
-         * a "Gondor", "Minas Tirith", "Rohan"
-         * con un peso de 10 cada uno.
-         * 
-         * Pasasela a TratamientoPedidosMultiple en su constructor.
-         */
-
-        // Coleccion pedidos
-        assertTrue(pedidos.size() == 3);
-
-        TratamientoPedidoMultiple pedidosMult = new TratamientoPedidoMultiple(pedidos);
-        assertNotNull(pedidosMult);
-
-        /**
-         * Completa los metodos del pedido multiple.
-         * Se valorara el uso de streams.
-         * 
-         * calcularTotalBultos
-         * @param   void
-         * @return  void
-         *   
-         * calcularPesoTotal
-         * @param   void
-         * @return  void
-         * 
-         */
-
-        pedidosMult.calcularTotalBultos();
-        assertEquals(3, pedidosMult.getNumBultos(), 0);
-
-        pedidosMult.calcularPesoTotal();
-        assertEquals(30, pedidosMult.getPesoTotal(), 0);
-
-        /**
-         * Trata el pedido multiple.
-         */
-        assertTrue(pedidosMult.tratar());
-    }
 }

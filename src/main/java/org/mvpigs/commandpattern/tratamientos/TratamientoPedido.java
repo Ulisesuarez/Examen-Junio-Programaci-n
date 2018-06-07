@@ -1,4 +1,4 @@
-package org.mvpigs.commandpattern.interfaces;
+package org.mvpigs.commandpattern.tratamientos;
 
 /**
  * La interfaz TratamientoPedido implementa el metodo

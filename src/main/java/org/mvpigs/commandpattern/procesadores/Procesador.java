@@ -1,4 +1,7 @@
-package org.mvpigs.commandpattern.interfaces;
+package org.mvpigs.commandpattern.procesadores;
+
+import org.mvpigs.commandpattern.pedidos.Pedido;
+import org.mvpigs.commandpattern.tratamientos.TratamientoPedido;
 
 /**
  * La interfaz procesador implementa el metodo:
@@ -14,4 +17,5 @@ public interface Procesador {
 
     public boolean procesa(TratamientoPedido pedido);
 
+    String printarStatus(boolean procesa, Pedido pedido);
 }

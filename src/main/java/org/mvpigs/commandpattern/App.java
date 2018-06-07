@@ -1,11 +1,11 @@
 package org.mvpigs.commandpattern;
 
-import org.mvpigs.commandpattern.interfaces.Pedido;
-import org.mvpigs.commandpattern.interfaces.PedidoPeligroso;
-import org.mvpigs.commandpattern.interfaces.TratamientoPedido;
+import org.mvpigs.commandpattern.pedidos.Pedido;
+import org.mvpigs.commandpattern.pedidos.PedidoPeligroso;
 import org.mvpigs.commandpattern.pedidos.PedidoInternacional;
 import org.mvpigs.commandpattern.pedidos.PedidoPeligrosoOrden;
 import org.mvpigs.commandpattern.procesadores.Oficina;
+import org.mvpigs.commandpattern.tratamientos.TratamientoPedido;
 import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoInternacional;
 import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoPeligroso;
 

@@ -1,4 +1,4 @@
-package org.mvpigs.commandpattern.interfaces;
+package org.mvpigs.commandpattern.pedidos;
 
 /**
  * La interfaz Pedido implementa los metodos:
@@ -16,5 +16,6 @@ public interface Pedido {
 	
 	public int peso();
 	public String destino();
+
 
 }
