@@ -9,9 +9,9 @@ public class PedidoPeligrosoOrden implements PedidoPeligroso {
     private int peso;
 
 
-    public PedidoPeligrosoOrden(String destino, String precaucion) {
+    public PedidoPeligrosoOrden(String destino, String instruccion) {
         this.destino=destino;
-        this.instruccion=precaucion;
+        this.instruccion=instruccion;
         this.id= UUID.randomUUID().toString();
     }
 

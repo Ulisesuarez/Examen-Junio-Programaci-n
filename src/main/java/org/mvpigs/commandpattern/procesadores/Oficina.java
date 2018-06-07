@@ -4,8 +4,8 @@ import org.mvpigs.commandpattern.pedidos.Pedido;
 import org.mvpigs.commandpattern.tratamientos.TratamientoPedido;
 
 public class Oficina implements Procesador{
-    public boolean procesa(TratamientoPedido pedido) {
-        return pedido.tratar(); }
+    public boolean procesa(TratamientoPedido tratamientoPedido) {
+        return tratamientoPedido.tratar(); }
 
     public String printarStatus(boolean procesa, Pedido pedido) {
        String mensaje;

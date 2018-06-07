@@ -15,7 +15,7 @@ import org.mvpigs.commandpattern.tratamientos.TratamientoPedido;
 
 public interface Procesador {
 
-    public boolean procesa(TratamientoPedido pedido);
+    public boolean procesa(TratamientoPedido tratamientoPedido);
 
-    String printarStatus(boolean procesa, Pedido pedido);
+    public String printarStatus(boolean procesa, Pedido pedido);
 }
