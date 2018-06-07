@@ -1,40 +1,22 @@
 package org.mvpigs.commandpattern.pedidos;
 
+import java.util.UUID;
+
 public class PedidoPeligrosoOrden implements PedidoPeligroso {
-    private final Object precaucion;
-    private Integer id;
+    private final String instruccion;
+    private String id;
     private String destino;
     private int peso;
 
 
     public PedidoPeligrosoOrden(String destino, String precaucion) {
         this.destino=destino;
-        this.precaucion=precaucion;
+        this.instruccion=precaucion;
+        this.id= UUID.randomUUID().toString();
     }
-
-    public Object getPrecaucion() {
-        return precaucion;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public void setDestino(String destino) {
-        this.destino = destino;
-    }
-
-
-    public void setPeso(int peso) {
-        this.peso = peso;
-    }
-
-
-
-
 
     public String instrucciones() {
-        return null;
+        return this.instruccion;
     }
 
     public int peso() {
@@ -45,7 +27,7 @@ public class PedidoPeligrosoOrden implements PedidoPeligroso {
         return this.destino;
     }
 
-    public Integer getId() {
+    public String  getId() {
         return this.id;
     }
 }
