@@ -18,6 +18,10 @@ import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoInternacional;
 import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoMultiple;
 import org.mvpigs.commandpattern.tratamientos.TratamientoPedidoPeligroso;
 
+import java.util.HashSet;
+import java.util.LinkedHashSet;
+import java.util.Set;
+
 /**
  * NO PUEDES MODIFICAR EL CODIGO DE LOS CASOS TEST 
  */
@@ -191,6 +195,50 @@ public class TestPedidos {
      * Crea las clases necesarias que se requieren en los casos test
      * respetando los constructores que se exigen.
      */
+    @Test
+    public void test_tratamiento_pedido_multiple_tratar() {
 
+        /**
+         * Crea una colección de tres pedidos nacionales,
+         * a "Gondor", "Minas Tirith", "Rohan"
+         * con un peso de 10 cada uno.
+         *
+         * Pasasela a TratamientoPedidosMultiple en su constructor.
+         */
+        Set<Pedido> pedidos = new LinkedHashSet<Pedido>();
+        pedidos.add(new PedidoNacional("Gondor", 10));
+        pedidos.add(new PedidoNacional("Minas Tirith", 10));
+        pedidos.add(new PedidoNacional("Rohan", 10));
+        // Coleccion pedidos
+        assertTrue(pedidos.size() == 3);
 
+        TratamientoPedidoMultiple pedidosMult = new TratamientoPedidoMultiple(pedidos);
+        assertNotNull(pedidosMult);
+
+        /**
+         * Completa los metodos del pedido multiple.
+         * Se valorara el uso de streams.
+         *
+         * calcularTotalBultos
+         * @param   void
+         * @return  void
+         *
+         * calcularPesoTotal
+         * @param   void
+         * @return  void
+         *
+         */
+
+        pedidosMult.calcularTotalBultos();
+        assertEquals(3, pedidosMult.getNumBultos(), 0);
+
+        pedidosMult.calcularPesoTotal();
+        assertEquals(30, pedidosMult.getPesoTotal(), 0);
+
+        /**
+         * Trata el pedido multiple.
+         */
+        assertTrue(pedidosMult.tratar());
+    }
 }
+
